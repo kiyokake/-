@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>レヴュースタァライト 設定判別</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>少女☆歌劇<br>レヴュースタァライト</h1>
+        <h2>設定判別ツール</h2>
+
+
+        <!-- ゲーム数 -->
+        <section>
+
+            <h3>ゲーム数</h3>
+
+            <div class="counter">
+
+                <button onclick="changeCount('games', -100)">−</button>
+
+                <input
+                    id="games"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('games', this.value)"
+                >
+
+                <button onclick="changeCount('games', 100)">＋</button>
+
+            </div>
+
+            <p>G</p>
+
+        </section>
+
+
+        <!-- ボーナス -->
+        <section>
+
+            <h3>ボーナス</h3>
+
+            <div class="counter-row">
+
+                <span>赤BIG</span>
+
+                <button onclick="changeCount('redBig', -1)">−</button>
+
+                <input
+                    id="redBig"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('redBig', this.value)"
+                >
+
+                <button onclick="changeCount('redBig', 1)">＋</button>
+
+            </div>
+
+
+            <div class="counter-row">
+
+                <span>青BIG</span>
+
+                <button onclick="changeCount('blueBig', -1)">−</button>
+
+                <input
+                    id="blueBig"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('blueBig', this.value)"
+                >
+
+                <button onclick="changeCount('blueBig', 1)">＋</button>
+
+            </div>
+
+
+            <div class="counter-row">
+
+                <span>REG</span>
+
+                <button onclick="changeCount('reg', -1)">−</button>
+
+                <input
+                    id="reg"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('reg', this.value)"
+                >
+
+                <button onclick="changeCount('reg', 1)">＋</button>
+
+            </div>
+
+        </section>
+
+
+<!-- CZ・AT -->
+<section>
+
+    <h3>CZ・AT</h3>
+
+
+    <div class="counter-row">
+
+        <span>CZ</span>
+
+        <button onclick="changeCount('cz', -1)">−</button>
+
+        <input
+            id="cz"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('cz', this.value)"
+        >
+
+        <button onclick="changeCount('cz', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>AT</span>
+
+        <button onclick="changeCount('at', -1)">−</button>
+
+        <input
+            id="at"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('at', this.value)"
+        >
+
+        <button onclick="changeCount('at', 1)">＋</button>
+
+    </div>
+
+</section>
+
+        <!-- レア役 -->
+        <section>
+
+            <h3>レア役</h3>
+
+
+            <div class="counter-row">
+
+                <span>スイカ</span>
+
+                <button onclick="changeCount('suika', -1)">−</button>
+
+                <input
+                    id="suika"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('suika', this.value)"
+                >
+
+                <button onclick="changeCount('suika', 1)">＋</button>
+
+            </div>
+
+
+            <div class="counter-row">
+
+                <span>弱チェリー</span>
+
+                <button onclick="changeCount('weakCherry', -1)">−</button>
+
+                <input
+                    id="weakCherry"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('weakCherry', this.value)"
+                >
+
+                <button onclick="changeCount('weakCherry', 1)">＋</button>
+
+            </div>
+
+
+            <div class="counter-row">
+
+                <span>強チェリー</span>
+
+                <button onclick="changeCount('strongCherry', -1)">−</button>
+
+                <input
+                    id="strongCherry"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('strongCherry', this.value)"
+                >
+
+                <button onclick="changeCount('strongCherry', 1)">＋</button>
+
+            </div>
+
+
+            <div class="counter-row">
+
+                <span>チャンス目</span>
+
+                <button onclick="changeCount('chance', -1)">−</button>
+
+                <input
+                    id="chance"
+                    type="number"
+                    min="0"
+                    value="0"
+                    onchange="setCount('chance', this.value)"
+                >
+
+                <button onclick="changeCount('chance', 1)">＋</button>
+
+            </div>
+
+        </section>
+
+
+<!-- ボーナス同時当選 -->
+<section>
+
+    <h3>ボーナス同時当選</h3>
+
+
+    <div class="counter-row">
+
+        <span>キラめき目＋REG</span>
+
+        <button onclick="changeCount('kiramekiReg', -1)">−</button>
+
+        <input
+            id="kiramekiReg"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('kiramekiReg', this.value)"
+        >
+
+        <button onclick="changeCount('kiramekiReg', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>スイカ＋REG</span>
+
+        <button onclick="changeCount('suikaReg', -1)">−</button>
+
+        <input
+            id="suikaReg"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('suikaReg', this.value)"
+        >
+
+        <button onclick="changeCount('suikaReg', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>チャンス目＋REG</span>
+
+        <button onclick="changeCount('chanceReg', -1)">−</button>
+
+        <input
+            id="chanceReg"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('chanceReg', this.value)"
+        >
+
+        <button onclick="changeCount('chanceReg', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>スイカ＋青BIG</span>
+
+        <button onclick="changeCount('suikaBlueBig', -1)">−</button>
+
+        <input
+            id="suikaBlueBig"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('suikaBlueBig', this.value)"
+        >
+
+        <button onclick="changeCount('suikaBlueBig', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>チャンス目＋青BIG</span>
+
+        <button onclick="changeCount('chanceBlueBig', -1)">−</button>
+
+        <input
+            id="chanceBlueBig"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('chanceBlueBig', this.value)"
+        >
+
+        <button onclick="changeCount('chanceBlueBig', 1)">＋</button>
+
+    </div>
+
+</section>
+
+
+<!-- 終了画面 -->
+<section>
+
+    <h3>終了画面</h3>
+
+
+    <div class="counter-row">
+
+        <span>デフォルト</span>
+
+        <button onclick="changeCount('endDefault', -1)">−</button>
+
+        <input
+            id="endDefault"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endDefault', this.value)"
+        >
+
+        <button onclick="changeCount('endDefault', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>高設定示唆・弱</span>
+
+        <button onclick="changeCount('endWeak', -1)">−</button>
+
+        <input
+            id="endWeak"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endWeak', this.value)"
+        >
+
+        <button onclick="changeCount('endWeak', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>高設定示唆・強</span>
+
+        <button onclick="changeCount('endStrong', -1)">−</button>
+
+        <input
+            id="endStrong"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endStrong', this.value)"
+        >
+
+        <button onclick="changeCount('endStrong', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>青エフェクト</span>
+
+        <button onclick="changeCount('endBlue', -1)">−</button>
+
+        <input
+            id="endBlue"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endBlue', this.value)"
+        >
+
+        <button onclick="changeCount('endBlue', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>赤エフェクト</span>
+
+        <button onclick="changeCount('endRed', -1)">−</button>
+
+        <input
+            id="endRed"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endRed', this.value)"
+        >
+
+        <button onclick="changeCount('endRed', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>金エフェクト</span>
+
+        <button onclick="changeCount('endGold', -1)">−</button>
+
+        <input
+            id="endGold"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endGold', this.value)"
+        >
+
+        <button onclick="changeCount('endGold', 1)">＋</button>
+
+    </div>
+
+
+    <div class="counter-row">
+
+        <span>虹エフェクト</span>
+
+        <button onclick="changeCount('endRainbow', -1)">−</button>
+
+        <input
+            id="endRainbow"
+            type="number"
+            min="0"
+            value="0"
+            onchange="setCount('endRainbow', this.value)"
+        >
+
+        <button onclick="changeCount('endRainbow', 1)">＋</button>
+
+    </div>
+
+</section>
+
+
+        <!-- 現在の確率 -->
+        <section>
+
+            <h3>現在の出現率</h3>
+
+            <p>
+                スイカ：
+                <span id="suikaRate">----</span>
+            </p>
+
+            <p>
+                弱チェリー：
+                <span id="weakCherryRate">----</span>
+            </p>
+
+            <p>
+                強チェリー：
+                <span id="strongCherryRate">----</span>
+            </p>
+
+            <p>
+                チャンス目：
+                <span id="chanceRate">----</span>
+            </p>
+
+        </section>
+
+
+        <!-- 設定判別 -->
+        <section>
+
+            <h3>設定推測</h3>
+
+            <div id="result">
+
+                <p>データを入力してください</p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
